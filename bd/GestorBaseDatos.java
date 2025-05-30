@@ -1,10 +1,16 @@
 package bd;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class GestorBaseDatos {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    private static final String URL = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";
+    private static final String USUARIO = "martina";
+    private static final String CLAVE = "martina";
 
-	}
-
+    public static Connection obtenerConexion() throws SQLException {
+        return DriverManager.getConnection(URL, USUARIO, CLAVE);
+    }
 }
